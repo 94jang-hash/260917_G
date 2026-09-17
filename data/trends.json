@@ -1,0 +1,1586 @@
+[
+ {
+  "month": "2024-09",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 327.6
+ },
+ {
+  "month": "2024-10",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 334.5
+ },
+ {
+  "month": "2024-11",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 333.7
+ },
+ {
+  "month": "2024-12",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 338.3
+ },
+ {
+  "month": "2025-01",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 348.3
+ },
+ {
+  "month": "2025-02",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 348.6
+ },
+ {
+  "month": "2025-03",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 343.7
+ },
+ {
+  "month": "2025-04",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 348.2
+ },
+ {
+  "month": "2025-05",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 353.6
+ },
+ {
+  "month": "2025-06",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 349.9
+ },
+ {
+  "month": "2025-07",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 356.8
+ },
+ {
+  "month": "2025-08",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 356.7
+ },
+ {
+  "month": "2025-09",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 354.7
+ },
+ {
+  "month": "2025-10",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 363.2
+ },
+ {
+  "month": "2025-11",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 364.3
+ },
+ {
+  "month": "2025-12",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 374.9
+ },
+ {
+  "month": "2026-01",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 373.5
+ },
+ {
+  "month": "2026-02",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 372.3
+ },
+ {
+  "month": "2026-03",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 378.6
+ },
+ {
+  "month": "2026-04",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 380.6
+ },
+ {
+  "month": "2026-05",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 385.8
+ },
+ {
+  "month": "2026-06",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 380.4
+ },
+ {
+  "month": "2026-07",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 379.0
+ },
+ {
+  "month": "2026-08",
+  "category": "fund",
+  "inst_type": "securities",
+  "balance": 386.6
+ },
+ {
+  "month": "2024-09",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 106.6
+ },
+ {
+  "month": "2024-10",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 109.3
+ },
+ {
+  "month": "2024-11",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 109.8
+ },
+ {
+  "month": "2024-12",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 110.2
+ },
+ {
+  "month": "2025-01",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 112.7
+ },
+ {
+  "month": "2025-02",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 110.6
+ },
+ {
+  "month": "2025-03",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 111.3
+ },
+ {
+  "month": "2025-04",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 110.8
+ },
+ {
+  "month": "2025-05",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 111.5
+ },
+ {
+  "month": "2025-06",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 114.5
+ },
+ {
+  "month": "2025-07",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 110.1
+ },
+ {
+  "month": "2025-08",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 112.1
+ },
+ {
+  "month": "2025-09",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 112.6
+ },
+ {
+  "month": "2025-10",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 114.2
+ },
+ {
+  "month": "2025-11",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 114.1
+ },
+ {
+  "month": "2025-12",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 116.8
+ },
+ {
+  "month": "2026-01",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 116.9
+ },
+ {
+  "month": "2026-02",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 115.8
+ },
+ {
+  "month": "2026-03",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 117.9
+ },
+ {
+  "month": "2026-04",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 115.3
+ },
+ {
+  "month": "2026-05",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 115.7
+ },
+ {
+  "month": "2026-06",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 116.7
+ },
+ {
+  "month": "2026-07",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 115.8
+ },
+ {
+  "month": "2026-08",
+  "category": "fund",
+  "inst_type": "bank",
+  "balance": 116.7
+ },
+ {
+  "month": "2024-09",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 261.0
+ },
+ {
+  "month": "2024-10",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 253.3
+ },
+ {
+  "month": "2024-11",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 263.4
+ },
+ {
+  "month": "2024-12",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 265.6
+ },
+ {
+  "month": "2025-01",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 272.8
+ },
+ {
+  "month": "2025-02",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 271.9
+ },
+ {
+  "month": "2025-03",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 269.3
+ },
+ {
+  "month": "2025-04",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 277.2
+ },
+ {
+  "month": "2025-05",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 275.7
+ },
+ {
+  "month": "2025-06",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 272.5
+ },
+ {
+  "month": "2025-07",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 284.1
+ },
+ {
+  "month": "2025-08",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 282.2
+ },
+ {
+  "month": "2025-09",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 284.7
+ },
+ {
+  "month": "2025-10",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 281.6
+ },
+ {
+  "month": "2025-11",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 292.5
+ },
+ {
+  "month": "2025-12",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 294.8
+ },
+ {
+  "month": "2026-01",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 293.2
+ },
+ {
+  "month": "2026-02",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 295.5
+ },
+ {
+  "month": "2026-03",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 297.7
+ },
+ {
+  "month": "2026-04",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 297.1
+ },
+ {
+  "month": "2026-05",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 299.8
+ },
+ {
+  "month": "2026-06",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 306.0
+ },
+ {
+  "month": "2026-07",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 299.5
+ },
+ {
+  "month": "2026-08",
+  "category": "trust",
+  "inst_type": "securities",
+  "balance": 295.1
+ },
+ {
+  "month": "2024-09",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 620.3
+ },
+ {
+  "month": "2024-10",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 616.2
+ },
+ {
+  "month": "2024-11",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 631.8
+ },
+ {
+  "month": "2024-12",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 631.4
+ },
+ {
+  "month": "2025-01",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 629.2
+ },
+ {
+  "month": "2025-02",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 631.3
+ },
+ {
+  "month": "2025-03",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 647.0
+ },
+ {
+  "month": "2025-04",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 645.7
+ },
+ {
+  "month": "2025-05",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 648.4
+ },
+ {
+  "month": "2025-06",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 646.4
+ },
+ {
+  "month": "2025-07",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 655.7
+ },
+ {
+  "month": "2025-08",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 660.0
+ },
+ {
+  "month": "2025-09",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 660.3
+ },
+ {
+  "month": "2025-10",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 660.9
+ },
+ {
+  "month": "2025-11",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 671.6
+ },
+ {
+  "month": "2025-12",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 670.4
+ },
+ {
+  "month": "2026-01",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 663.3
+ },
+ {
+  "month": "2026-02",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 667.2
+ },
+ {
+  "month": "2026-03",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 664.3
+ },
+ {
+  "month": "2026-04",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 674.7
+ },
+ {
+  "month": "2026-05",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 696.5
+ },
+ {
+  "month": "2026-06",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 680.3
+ },
+ {
+  "month": "2026-07",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 684.3
+ },
+ {
+  "month": "2026-08",
+  "category": "trust",
+  "inst_type": "bank",
+  "balance": 682.8
+ },
+ {
+  "month": "2024-09",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 106.6
+ },
+ {
+  "month": "2024-10",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 105.2
+ },
+ {
+  "month": "2024-11",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 106.0
+ },
+ {
+  "month": "2024-12",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 108.9
+ },
+ {
+  "month": "2025-01",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 109.0
+ },
+ {
+  "month": "2025-02",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 108.8
+ },
+ {
+  "month": "2025-03",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 109.5
+ },
+ {
+  "month": "2025-04",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 111.7
+ },
+ {
+  "month": "2025-05",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 111.3
+ },
+ {
+  "month": "2025-06",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 114.3
+ },
+ {
+  "month": "2025-07",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 116.4
+ },
+ {
+  "month": "2025-08",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 113.0
+ },
+ {
+  "month": "2025-09",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 115.9
+ },
+ {
+  "month": "2025-10",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 117.8
+ },
+ {
+  "month": "2025-11",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 119.8
+ },
+ {
+  "month": "2025-12",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 118.3
+ },
+ {
+  "month": "2026-01",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 117.2
+ },
+ {
+  "month": "2026-02",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 122.5
+ },
+ {
+  "month": "2026-03",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 120.2
+ },
+ {
+  "month": "2026-04",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 122.7
+ },
+ {
+  "month": "2026-05",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 122.2
+ },
+ {
+  "month": "2026-06",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 123.9
+ },
+ {
+  "month": "2026-07",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 124.8
+ },
+ {
+  "month": "2026-08",
+  "category": "wrap",
+  "inst_type": "securities",
+  "balance": 122.2
+ },
+ {
+  "month": "2024-09",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 55.8
+ },
+ {
+  "month": "2024-10",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 55.0
+ },
+ {
+  "month": "2024-11",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 54.9
+ },
+ {
+  "month": "2024-12",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 55.0
+ },
+ {
+  "month": "2025-01",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 54.2
+ },
+ {
+  "month": "2025-02",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 53.5
+ },
+ {
+  "month": "2025-03",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 53.0
+ },
+ {
+  "month": "2025-04",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 52.8
+ },
+ {
+  "month": "2025-05",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 52.4
+ },
+ {
+  "month": "2025-06",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 52.5
+ },
+ {
+  "month": "2025-07",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 51.8
+ },
+ {
+  "month": "2025-08",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 51.4
+ },
+ {
+  "month": "2025-09",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 51.2
+ },
+ {
+  "month": "2025-10",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 50.8
+ },
+ {
+  "month": "2025-11",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 50.8
+ },
+ {
+  "month": "2025-12",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 50.1
+ },
+ {
+  "month": "2026-01",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 49.1
+ },
+ {
+  "month": "2026-02",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 49.0
+ },
+ {
+  "month": "2026-03",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 49.2
+ },
+ {
+  "month": "2026-04",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 48.5
+ },
+ {
+  "month": "2026-05",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 47.8
+ },
+ {
+  "month": "2026-06",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 47.3
+ },
+ {
+  "month": "2026-07",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 46.8
+ },
+ {
+  "month": "2026-08",
+  "category": "els",
+  "inst_type": "securities",
+  "balance": 47.2
+ },
+ {
+  "month": "2024-09",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 996.2
+ },
+ {
+  "month": "2024-10",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1012.9
+ },
+ {
+  "month": "2024-11",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1031.0
+ },
+ {
+  "month": "2024-12",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1022.5
+ },
+ {
+  "month": "2025-01",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1039.3
+ },
+ {
+  "month": "2025-02",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1019.2
+ },
+ {
+  "month": "2025-03",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1052.7
+ },
+ {
+  "month": "2025-04",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1017.5
+ },
+ {
+  "month": "2025-05",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1011.4
+ },
+ {
+  "month": "2025-06",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1028.9
+ },
+ {
+  "month": "2025-07",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1048.9
+ },
+ {
+  "month": "2025-08",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1054.3
+ },
+ {
+  "month": "2025-09",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1049.4
+ },
+ {
+  "month": "2025-10",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1047.7
+ },
+ {
+  "month": "2025-11",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1074.0
+ },
+ {
+  "month": "2025-12",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1058.7
+ },
+ {
+  "month": "2026-01",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1074.5
+ },
+ {
+  "month": "2026-02",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1091.6
+ },
+ {
+  "month": "2026-03",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1061.2
+ },
+ {
+  "month": "2026-04",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1069.7
+ },
+ {
+  "month": "2026-05",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1054.8
+ },
+ {
+  "month": "2026-06",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1081.6
+ },
+ {
+  "month": "2026-07",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1063.0
+ },
+ {
+  "month": "2026-08",
+  "category": "deposit",
+  "inst_type": "bank",
+  "balance": 1080.9
+ },
+ {
+  "month": "2024-09",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 18.0
+ },
+ {
+  "month": "2024-10",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 18.2
+ },
+ {
+  "month": "2024-11",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 18.8
+ },
+ {
+  "month": "2024-12",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 19.9
+ },
+ {
+  "month": "2025-01",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 19.8
+ },
+ {
+  "month": "2025-02",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 20.5
+ },
+ {
+  "month": "2025-03",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 20.9
+ },
+ {
+  "month": "2025-04",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 21.1
+ },
+ {
+  "month": "2025-05",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 21.2
+ },
+ {
+  "month": "2025-06",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 21.8
+ },
+ {
+  "month": "2025-07",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 22.1
+ },
+ {
+  "month": "2025-08",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 22.3
+ },
+ {
+  "month": "2025-09",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 23.2
+ },
+ {
+  "month": "2025-10",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 23.7
+ },
+ {
+  "month": "2025-11",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 23.9
+ },
+ {
+  "month": "2025-12",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 23.9
+ },
+ {
+  "month": "2026-01",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 25.1
+ },
+ {
+  "month": "2026-02",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 24.9
+ },
+ {
+  "month": "2026-03",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 25.5
+ },
+ {
+  "month": "2026-04",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 25.0
+ },
+ {
+  "month": "2026-05",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 25.8
+ },
+ {
+  "month": "2026-06",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 25.8
+ },
+ {
+  "month": "2026-07",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 26.2
+ },
+ {
+  "month": "2026-08",
+  "category": "isa",
+  "inst_type": "securities",
+  "balance": 27.0
+ },
+ {
+  "month": "2024-09",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 11.8
+ },
+ {
+  "month": "2024-10",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.3
+ },
+ {
+  "month": "2024-11",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.2
+ },
+ {
+  "month": "2024-12",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.1
+ },
+ {
+  "month": "2025-01",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.1
+ },
+ {
+  "month": "2025-02",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.7
+ },
+ {
+  "month": "2025-03",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.4
+ },
+ {
+  "month": "2025-04",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.9
+ },
+ {
+  "month": "2025-05",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.4
+ },
+ {
+  "month": "2025-06",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.7
+ },
+ {
+  "month": "2025-07",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.9
+ },
+ {
+  "month": "2025-08",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 12.9
+ },
+ {
+  "month": "2025-09",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.5
+ },
+ {
+  "month": "2025-10",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.3
+ },
+ {
+  "month": "2025-11",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.5
+ },
+ {
+  "month": "2025-12",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.7
+ },
+ {
+  "month": "2026-01",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.4
+ },
+ {
+  "month": "2026-02",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 14.0
+ },
+ {
+  "month": "2026-03",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.8
+ },
+ {
+  "month": "2026-04",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.3
+ },
+ {
+  "month": "2026-05",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.6
+ },
+ {
+  "month": "2026-06",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.6
+ },
+ {
+  "month": "2026-07",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.8
+ },
+ {
+  "month": "2026-08",
+  "category": "isa",
+  "inst_type": "bank",
+  "balance": 13.9
+ },
+ {
+  "month": "2024-09",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 101.5
+ },
+ {
+  "month": "2024-10",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 102.4
+ },
+ {
+  "month": "2024-11",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 104.2
+ },
+ {
+  "month": "2024-12",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 106.5
+ },
+ {
+  "month": "2025-01",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 107.0
+ },
+ {
+  "month": "2025-02",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 108.0
+ },
+ {
+  "month": "2025-03",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 108.6
+ },
+ {
+  "month": "2025-04",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 111.2
+ },
+ {
+  "month": "2025-05",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 111.8
+ },
+ {
+  "month": "2025-06",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 110.8
+ },
+ {
+  "month": "2025-07",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 114.3
+ },
+ {
+  "month": "2025-08",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 114.8
+ },
+ {
+  "month": "2025-09",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 113.2
+ },
+ {
+  "month": "2025-10",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 120.7
+ },
+ {
+  "month": "2025-11",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 118.5
+ },
+ {
+  "month": "2025-12",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 118.5
+ },
+ {
+  "month": "2026-01",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 123.9
+ },
+ {
+  "month": "2026-02",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 123.4
+ },
+ {
+  "month": "2026-03",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 125.4
+ },
+ {
+  "month": "2026-04",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 123.6
+ },
+ {
+  "month": "2026-05",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 130.4
+ },
+ {
+  "month": "2026-06",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 128.1
+ },
+ {
+  "month": "2026-07",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 129.7
+ },
+ {
+  "month": "2026-08",
+  "category": "pension",
+  "inst_type": "securities",
+  "balance": 133.8
+ },
+ {
+  "month": "2024-09",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 210.6
+ },
+ {
+  "month": "2024-10",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 210.6
+ },
+ {
+  "month": "2024-11",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 215.9
+ },
+ {
+  "month": "2024-12",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 217.7
+ },
+ {
+  "month": "2025-01",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 217.2
+ },
+ {
+  "month": "2025-02",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 217.4
+ },
+ {
+  "month": "2025-03",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 218.0
+ },
+ {
+  "month": "2025-04",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 222.9
+ },
+ {
+  "month": "2025-05",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 218.1
+ },
+ {
+  "month": "2025-06",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 220.9
+ },
+ {
+  "month": "2025-07",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 224.8
+ },
+ {
+  "month": "2025-08",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 222.3
+ },
+ {
+  "month": "2025-09",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 226.8
+ },
+ {
+  "month": "2025-10",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 223.1
+ },
+ {
+  "month": "2025-11",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 230.1
+ },
+ {
+  "month": "2025-12",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 225.4
+ },
+ {
+  "month": "2026-01",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 225.1
+ },
+ {
+  "month": "2026-02",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 230.1
+ },
+ {
+  "month": "2026-03",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 235.5
+ },
+ {
+  "month": "2026-04",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 229.6
+ },
+ {
+  "month": "2026-05",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 235.9
+ },
+ {
+  "month": "2026-06",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 234.6
+ },
+ {
+  "month": "2026-07",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 230.8
+ },
+ {
+  "month": "2026-08",
+  "category": "pension",
+  "inst_type": "bank",
+  "balance": 237.0
+ }
+]

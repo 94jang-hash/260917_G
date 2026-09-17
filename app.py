@@ -1,192 +1,213 @@
+"""
+금융상품 동향 KR — 한국 증권사·은행의 펀드/신탁/랩 등 금융상품 동향 대시보드.
+
+데이터는 data/*.json 에서 읽는다(서버리스 환경에서도 읽기 전용이라 안전).
+수치는 예시 데이터이며, 같은 스키마의 실데이터로 교체하면 그대로 동작한다.
+"""
+import json
 import os
-import sqlite3
-from datetime import datetime
-from flask import Flask, render_template, request, jsonify
+from collections import defaultdict
+
+from flask import Flask, abort, jsonify, render_template, request
 
 app = Flask(__name__)
-# Vercel 같은 서버리스 환경은 프로젝트 폴더가 읽기 전용이므로 /tmp에 DB를 둔다 (인스턴스 재시작 시 초기화됨)
-if os.environ.get('VERCEL'):
-    DB_PATH = os.path.join('/tmp', 'todos.db')
-else:
-    DB_PATH = os.path.join(os.path.dirname(__file__), 'todos.db')
+app.json.ensure_ascii = False
 
-def get_db():
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
+DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
-def init_db():
-    with get_db() as conn:
-        conn.execute('''
-            CREATE TABLE IF NOT EXISTS todos (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                title TEXT NOT NULL,
-                description TEXT DEFAULT '',
-                category TEXT DEFAULT '일반',
-                priority TEXT DEFAULT 'normal',
-                due_date TEXT DEFAULT '',
-                completed INTEGER DEFAULT 0,
-                created_at TEXT NOT NULL,
-                completed_at TEXT
-            )
-        ''')
-        # 샘플 데이터가 전혀 없다면 기본 안내 데이터 2개 추가
-        cur = conn.cursor()
-        cur.execute('SELECT COUNT(*) FROM todos')
-        if cur.fetchone()[0] == 0:
-            now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            today = datetime.now().strftime('%Y-%m-%d')
-            samples = [
-                ('Flask 웹앱 프로젝트 시작하기', '가상환경 설정 및 웹 서버 구동 확인하기', '업무', 'high', today, 1, now, now),
-                ('오늘의 핵심 할 일 작성하기', '우선순위와 카테고리를 설정하여 체계적으로 관리해보세요.', '개인', 'normal', today, 0, now, None),
-                ('완료된 작업 확인 및 리포트 점검', '대시보드 상단의 진행률과 통계를 확인합니다.', '공부', 'low', today, 0, now, None),
-            ]
-            conn.executemany('''
-                INSERT INTO todos (title, description, category, priority, due_date, completed, created_at, completed_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            ''', samples)
-        conn.commit()
+
+def load(name):
+    with open(os.path.join(DATA_DIR, name), encoding='utf-8') as f:
+        return json.load(f)
+
+
+META = load('meta.json')
+INSTITUTIONS = load('institutions.json')
+TRENDS = load('trends.json')
+INST_BALANCES = load('institution_balances.json')
+PRODUCTS = load('products.json')
+ISSUES = load('issues.json')
+
+INST_BY_ID = {i['id']: i for i in INSTITUTIONS}
+CATEGORY_IDS = [c['id'] for c in META['categories']]
+MONTHS = META['months']
+INST_TYPES = {'securities', 'bank'}
+
+
+def pct(cur, prev):
+    return round((cur / prev - 1) * 100, 1) if prev else None
+
+
+def parse_inst_type():
+    """?inst_type=all|securities|bank → None(전체) 또는 유형 문자열."""
+    v = request.args.get('inst_type', 'all')
+    return v if v in INST_TYPES else None
+
+
+def parse_categories():
+    raw = request.args.get('categories', '')
+    ids = [c for c in raw.split(',') if c in CATEGORY_IDS]
+    return ids or CATEGORY_IDS
+
+
+def aggregate_trends(inst_type=None):
+    """(category, month) → 잔고 합계. inst_type 이 None 이면 증권사+은행 합산."""
+    agg = defaultdict(float)
+    for r in TRENDS:
+        if inst_type and r['inst_type'] != inst_type:
+            continue
+        agg[(r['category'], r['month'])] += r['balance']
+    return agg
+
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', meta=META)
 
-@app.route('/api/todos', methods=['GET'])
-def get_todos():
-    status_filter = request.args.get('status', 'all')
-    category_filter = request.args.get('category', 'all')
-    search_query = request.args.get('search', '').strip()
 
-    query = 'SELECT * FROM todos WHERE 1=1'
-    params = []
+@app.route('/api/meta')
+def api_meta():
+    return jsonify(META)
 
-    if status_filter == 'active':
-        query += ' AND completed = 0'
-    elif status_filter == 'completed':
-        query += ' AND completed = 1'
 
-    if category_filter != 'all' and category_filter:
-        query += ' AND category = ?'
-        params.append(category_filter)
+@app.route('/api/summary')
+def api_summary():
+    inst_type = parse_inst_type()
+    agg = aggregate_trends(inst_type)
+    last, prev, year_ago = MONTHS[-1], MONTHS[-2], MONTHS[-13]
+    out = []
+    for cat in META['categories']:
+        cid = cat['id']
+        cur = agg.get((cid, last), 0.0)
+        if cur == 0.0:
+            continue  # 해당 기관유형이 취급하지 않는 상품(예: 은행의 랩)
+        out.append({
+            'category': cid,
+            'name': cat['name'],
+            'required': cat['required'],
+            'desc': cat['desc'],
+            'balance': round(cur, 1),
+            'mom_pct': pct(cur, agg.get((cid, prev))),
+            'yoy_pct': pct(cur, agg.get((cid, year_ago))),
+        })
+    total = sum(o['balance'] for o in out)
+    for o in out:
+        o['share_pct'] = round(o['balance'] / total * 100, 1) if total else 0
+    return jsonify({'as_of': last, 'inst_type': inst_type or 'all', 'total': round(total, 1), 'items': out})
 
-    if search_query:
-        query += ' AND (title LIKE ? OR description LIKE ?)'
-        params.extend([f'%{search_query}%', f'%{search_query}%'])
 
-    query += ' ORDER BY completed ASC, CASE priority WHEN "high" THEN 1 WHEN "normal" THEN 2 WHEN "low" THEN 3 ELSE 4 END, id DESC'
+@app.route('/api/trends')
+def api_trends():
+    inst_type = parse_inst_type()
+    cats = parse_categories()
+    try:
+        n = max(3, min(len(MONTHS), int(request.args.get('months', len(MONTHS)))))
+    except ValueError:
+        n = len(MONTHS)
+    months = MONTHS[-n:]
+    agg = aggregate_trends(inst_type)
+    series = []
+    for cat in META['categories']:
+        if cat['id'] not in cats:
+            continue
+        values = [round(agg.get((cat['id'], m), 0.0), 1) for m in months]
+        if not any(values):
+            continue
+        base = values[0] or 1
+        series.append({
+            'category': cat['id'],
+            'name': cat['name'],
+            'values': values,
+            'indexed': [round(v / base * 100, 1) for v in values],
+        })
+    return jsonify({'months': months, 'unit': '조원', 'series': series})
 
-    with get_db() as conn:
-        cursor = conn.cursor()
-        cursor.execute(query, params)
-        rows = cursor.fetchall()
-        todos = [dict(row) for row in rows]
 
-    return jsonify({'success': True, 'todos': todos})
+@app.route('/api/split')
+def api_split():
+    """카테고리별 증권사/은행 구성(기준월)."""
+    last = MONTHS[-1]
+    by_cat = defaultdict(lambda: {'securities': 0.0, 'bank': 0.0})
+    for r in TRENDS:
+        if r['month'] == last:
+            by_cat[r['category']][r['inst_type']] += r['balance']
+    items = [{'category': c['id'], 'name': c['name'],
+              'securities': round(by_cat[c['id']]['securities'], 1),
+              'bank': round(by_cat[c['id']]['bank'], 1)}
+             for c in META['categories']]
+    return jsonify({'as_of': last, 'unit': '조원', 'items': items})
 
-@app.route('/api/todos', methods=['POST'])
-def add_todo():
-    data = request.get_json() or {}
-    title = data.get('title', '').strip()
-    if not title:
-        return jsonify({'success': False, 'message': '할 일 제목을 입력해주세요.'}), 400
 
-    description = data.get('description', '').strip()
-    category = data.get('category', '일반').strip() or '일반'
-    priority = data.get('priority', 'normal')
-    due_date = data.get('due_date', '').strip()
-    created_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+@app.route('/api/institutions')
+def api_institutions():
+    inst_type = parse_inst_type()
+    category = request.args.get('category', 'fund')
+    if category not in CATEGORY_IDS:
+        abort(400, '알 수 없는 상품 유형입니다.')
+    rows = []
+    for r in INST_BALANCES:
+        inst = INST_BY_ID[r['institution_id']]
+        if r['category'] != category or (inst_type and inst['type'] != inst_type):
+            continue
+        rows.append({'id': inst['id'], 'name': inst['name'], 'type': inst['type'],
+                     'balance': r['balance'], 'yoy_pct': r['yoy_pct']})
+    rows.sort(key=lambda x: x['balance'], reverse=True)
+    total = sum(r['balance'] for r in rows)
+    for r in rows:
+        r['share_pct'] = round(r['balance'] / total * 100, 1) if total else 0
+    return jsonify({'category': category, 'unit': '조원', 'items': rows})
 
-    with get_db() as conn:
-        cursor = conn.cursor()
-        cursor.execute('''
-            INSERT INTO todos (title, description, category, priority, due_date, completed, created_at)
-            VALUES (?, ?, ?, ?, ?, 0, ?)
-        ''', (title, description, category, priority, due_date, created_at))
-        conn.commit()
-        new_id = cursor.lastrowid
 
-    return jsonify({'success': True, 'id': new_id, 'message': '할 일이 등록되었습니다.'}), 201
+@app.route('/api/products')
+def api_products():
+    inst_type = parse_inst_type()
+    category = request.args.get('category', 'all')
+    institution = request.args.get('institution', 'all')
+    q = request.args.get('q', '').strip().lower()
+    sort = request.args.get('sort', 'balance')
+    order = request.args.get('order', 'desc')
 
-@app.route('/api/todos/<int:todo_id>', methods=['PUT'])
-def update_todo(todo_id):
-    data = request.get_json() or {}
-    with get_db() as conn:
-        cursor = conn.cursor()
-        cursor.execute('SELECT * FROM todos WHERE id = ?', (todo_id,))
-        todo = cursor.fetchone()
-        if not todo:
-            return jsonify({'success': False, 'message': '항목을 찾을 수 없습니다.'}), 404
+    rows = []
+    for p in PRODUCTS:
+        inst = INST_BY_ID[p['institution_id']]
+        if inst_type and inst['type'] != inst_type:
+            continue
+        if category != 'all' and p['category'] != category:
+            continue
+        if institution != 'all' and p['institution_id'] != institution:
+            continue
+        if q and q not in p['name'].lower() and q not in inst['name'].lower() and q not in p['subtype'].lower():
+            continue
+        rows.append({**p, 'institution': inst['name'], 'inst_type': inst['type']})
 
-        title = data.get('title', todo['title'])
-        description = data.get('description', todo['description'])
-        category = data.get('category', todo['category'])
-        priority = data.get('priority', todo['priority'])
-        due_date = data.get('due_date', todo['due_date'])
-        
-        # 완료 상태 토글 여부
-        if 'completed' in data:
-            completed = 1 if data['completed'] else 0
-            completed_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S') if completed else None
-        else:
-            completed = todo['completed']
-            completed_at = todo['completed_at']
+    if sort not in ('balance', 'return_1y', 'risk_grade', 'launch_date', 'name'):
+        sort = 'balance'
+    rows.sort(key=lambda x: x[sort], reverse=(order == 'desc'))
+    return jsonify({'count': len(rows), 'unit': {'balance': '억원', 'return_1y': '%', 'min_amount': '만원'}, 'items': rows})
 
-        cursor.execute('''
-            UPDATE todos
-            SET title = ?, description = ?, category = ?, priority = ?, due_date = ?, completed = ?, completed_at = ?
-            WHERE id = ?
-        ''', (title, description, category, priority, due_date, completed, completed_at, todo_id))
-        conn.commit()
 
-    return jsonify({'success': True, 'message': '할 일이 업데이트되었습니다.'})
+@app.route('/api/products/<int:product_id>')
+def api_product(product_id):
+    p = next((x for x in PRODUCTS if x['id'] == product_id), None)
+    if not p:
+        abort(404)
+    inst = INST_BY_ID[p['institution_id']]
+    return jsonify({**p, 'institution': inst['name'], 'inst_type': inst['type']})
 
-@app.route('/api/todos/<int:todo_id>', methods=['DELETE'])
-def delete_todo(todo_id):
-    with get_db() as conn:
-        cursor = conn.cursor()
-        cursor.execute('DELETE FROM todos WHERE id = ?', (todo_id,))
-        if cursor.rowcount == 0:
-            return jsonify({'success': False, 'message': '항목을 찾을 수 없습니다.'}), 404
-        conn.commit()
 
-    return jsonify({'success': True, 'message': '할 일이 삭제되었습니다.'})
+@app.route('/api/issues')
+def api_issues():
+    category = request.args.get('category', 'all')
+    items = [i for i in ISSUES if category == 'all' or category in i['categories']]
+    return jsonify({'count': len(items), 'items': items})
 
-@app.route('/api/todos/clear-completed', methods=['POST'])
-def clear_completed():
-    with get_db() as conn:
-        cursor = conn.cursor()
-        cursor.execute('DELETE FROM todos WHERE completed = 1')
-        deleted_count = cursor.rowcount
-        conn.commit()
 
-    return jsonify({'success': True, 'deleted': deleted_count, 'message': f'{deleted_count}개의 완료된 항목이 삭제되었습니다.'})
+@app.errorhandler(400)
+@app.errorhandler(404)
+def handle_error(err):
+    return jsonify({'error': err.description}), err.code
 
-@app.route('/api/stats', methods=['GET'])
-def get_stats():
-    with get_db() as conn:
-        cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM todos')
-        total = cursor.fetchone()[0]
-        cursor.execute('SELECT COUNT(*) FROM todos WHERE completed = 1')
-        completed = cursor.fetchone()[0]
-        active = total - completed
-        percentage = round((completed / total * 100)) if total > 0 else 0
-
-        # 카테고리 목록
-        cursor.execute('SELECT DISTINCT category FROM todos WHERE category IS NOT NULL AND category != ""')
-        categories = [row[0] for row in cursor.fetchall()]
-
-    return jsonify({
-        'total': total,
-        'completed': completed,
-        'active': active,
-        'percentage': percentage,
-        'categories': categories
-    })
-
-# 서버리스 환경에서도 첫 import 시 테이블이 준비되도록 모듈 로드 시점에 초기화
-init_db()
 
 if __name__ == '__main__':
-    print("Todo Flask Application running at http://127.0.0.1:5000")
+    print('금융상품 동향 KR running at http://127.0.0.1:5000')
     app.run(host='127.0.0.1', port=5000, debug=True)

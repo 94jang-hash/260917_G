@@ -1,0 +1,794 @@
+[
+ {
+  "institution_id": "mirae",
+  "category": "fund",
+  "balance": 42.8,
+  "yoy_pct": 14.4
+ },
+ {
+  "institution_id": "kis",
+  "category": "fund",
+  "balance": 47.3,
+  "yoy_pct": 10.8
+ },
+ {
+  "institution_id": "nh",
+  "category": "fund",
+  "balance": 46.4,
+  "yoy_pct": 16.3
+ },
+ {
+  "institution_id": "samsung",
+  "category": "fund",
+  "balance": 44.0,
+  "yoy_pct": 12.2
+ },
+ {
+  "institution_id": "kb_sec",
+  "category": "fund",
+  "balance": 37.2,
+  "yoy_pct": 10.1
+ },
+ {
+  "institution_id": "kiwoom",
+  "category": "fund",
+  "balance": 33.0,
+  "yoy_pct": 8.2
+ },
+ {
+  "institution_id": "shinhan_sec",
+  "category": "fund",
+  "balance": 34.3,
+  "yoy_pct": -0.3
+ },
+ {
+  "institution_id": "hana_sec",
+  "category": "fund",
+  "balance": 35.5,
+  "yoy_pct": 12.7
+ },
+ {
+  "institution_id": "meritz",
+  "category": "fund",
+  "balance": 18.3,
+  "yoy_pct": 2.8
+ },
+ {
+  "institution_id": "daishin",
+  "category": "fund",
+  "balance": 21.2,
+  "yoy_pct": -0.9
+ },
+ {
+  "institution_id": "yuanta",
+  "category": "fund",
+  "balance": 11.9,
+  "yoy_pct": 20.2
+ },
+ {
+  "institution_id": "hanwha",
+  "category": "fund",
+  "balance": 14.8,
+  "yoy_pct": 13.0
+ },
+ {
+  "institution_id": "kb_bank",
+  "category": "fund",
+  "balance": 18.7,
+  "yoy_pct": 11.3
+ },
+ {
+  "institution_id": "shinhan_bank",
+  "category": "fund",
+  "balance": 20.8,
+  "yoy_pct": 7.8
+ },
+ {
+  "institution_id": "hana_bank",
+  "category": "fund",
+  "balance": 15.3,
+  "yoy_pct": 6.2
+ },
+ {
+  "institution_id": "woori",
+  "category": "fund",
+  "balance": 12.8,
+  "yoy_pct": -1.5
+ },
+ {
+  "institution_id": "nh_bank",
+  "category": "fund",
+  "balance": 15.5,
+  "yoy_pct": 2.0
+ },
+ {
+  "institution_id": "ibk",
+  "category": "fund",
+  "balance": 9.6,
+  "yoy_pct": -4.0
+ },
+ {
+  "institution_id": "sc",
+  "category": "fund",
+  "balance": 4.6,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "kakao",
+  "category": "fund",
+  "balance": 5.1,
+  "yoy_pct": -1.9
+ },
+ {
+  "institution_id": "kbank",
+  "category": "fund",
+  "balance": 3.4,
+  "yoy_pct": -5.6
+ },
+ {
+  "institution_id": "toss",
+  "category": "fund",
+  "balance": 2.5,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "im",
+  "category": "fund",
+  "balance": 4.7,
+  "yoy_pct": -2.1
+ },
+ {
+  "institution_id": "busan",
+  "category": "fund",
+  "balance": 3.7,
+  "yoy_pct": 2.8
+ },
+ {
+  "institution_id": "mirae",
+  "category": "trust",
+  "balance": 42.0,
+  "yoy_pct": 14.1
+ },
+ {
+  "institution_id": "kis",
+  "category": "trust",
+  "balance": 38.4,
+  "yoy_pct": -2.8
+ },
+ {
+  "institution_id": "nh",
+  "category": "trust",
+  "balance": 29.6,
+  "yoy_pct": 8.4
+ },
+ {
+  "institution_id": "samsung",
+  "category": "trust",
+  "balance": 40.6,
+  "yoy_pct": 12.8
+ },
+ {
+  "institution_id": "kb_sec",
+  "category": "trust",
+  "balance": 33.3,
+  "yoy_pct": 5.4
+ },
+ {
+  "institution_id": "kiwoom",
+  "category": "trust",
+  "balance": 15.3,
+  "yoy_pct": 13.3
+ },
+ {
+  "institution_id": "shinhan_sec",
+  "category": "trust",
+  "balance": 23.3,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "hana_sec",
+  "category": "trust",
+  "balance": 24.4,
+  "yoy_pct": 5.2
+ },
+ {
+  "institution_id": "meritz",
+  "category": "trust",
+  "balance": 15.9,
+  "yoy_pct": 1.9
+ },
+ {
+  "institution_id": "daishin",
+  "category": "trust",
+  "balance": 15.1,
+  "yoy_pct": 2.0
+ },
+ {
+  "institution_id": "yuanta",
+  "category": "trust",
+  "balance": 8.7,
+  "yoy_pct": 13.0
+ },
+ {
+  "institution_id": "hanwha",
+  "category": "trust",
+  "balance": 8.4,
+  "yoy_pct": 13.5
+ },
+ {
+  "institution_id": "kb_bank",
+  "category": "trust",
+  "balance": 94.0,
+  "yoy_pct": 2.2
+ },
+ {
+  "institution_id": "shinhan_bank",
+  "category": "trust",
+  "balance": 124.1,
+  "yoy_pct": 14.4
+ },
+ {
+  "institution_id": "hana_bank",
+  "category": "trust",
+  "balance": 101.0,
+  "yoy_pct": 6.3
+ },
+ {
+  "institution_id": "woori",
+  "category": "trust",
+  "balance": 93.3,
+  "yoy_pct": 5.4
+ },
+ {
+  "institution_id": "nh_bank",
+  "category": "trust",
+  "balance": 75.7,
+  "yoy_pct": -2.6
+ },
+ {
+  "institution_id": "ibk",
+  "category": "trust",
+  "balance": 66.6,
+  "yoy_pct": 3.6
+ },
+ {
+  "institution_id": "sc",
+  "category": "trust",
+  "balance": 27.0,
+  "yoy_pct": 7.6
+ },
+ {
+  "institution_id": "kakao",
+  "category": "trust",
+  "balance": 25.6,
+  "yoy_pct": -4.5
+ },
+ {
+  "institution_id": "kbank",
+  "category": "trust",
+  "balance": 17.8,
+  "yoy_pct": -3.3
+ },
+ {
+  "institution_id": "toss",
+  "category": "trust",
+  "balance": 15.4,
+  "yoy_pct": -4.3
+ },
+ {
+  "institution_id": "im",
+  "category": "trust",
+  "balance": 21.2,
+  "yoy_pct": 13.4
+ },
+ {
+  "institution_id": "busan",
+  "category": "trust",
+  "balance": 21.1,
+  "yoy_pct": 6.0
+ },
+ {
+  "institution_id": "mirae",
+  "category": "wrap",
+  "balance": 18.4,
+  "yoy_pct": -0.5
+ },
+ {
+  "institution_id": "kis",
+  "category": "wrap",
+  "balance": 16.4,
+  "yoy_pct": 3.8
+ },
+ {
+  "institution_id": "nh",
+  "category": "wrap",
+  "balance": 15.1,
+  "yoy_pct": 18.0
+ },
+ {
+  "institution_id": "samsung",
+  "category": "wrap",
+  "balance": 11.9,
+  "yoy_pct": 3.5
+ },
+ {
+  "institution_id": "kb_sec",
+  "category": "wrap",
+  "balance": 13.2,
+  "yoy_pct": -0.8
+ },
+ {
+  "institution_id": "kiwoom",
+  "category": "wrap",
+  "balance": 8.4,
+  "yoy_pct": 12.0
+ },
+ {
+  "institution_id": "shinhan_sec",
+  "category": "wrap",
+  "balance": 8.1,
+  "yoy_pct": 11.0
+ },
+ {
+  "institution_id": "hana_sec",
+  "category": "wrap",
+  "balance": 9.6,
+  "yoy_pct": 18.5
+ },
+ {
+  "institution_id": "meritz",
+  "category": "wrap",
+  "balance": 6.7,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "daishin",
+  "category": "wrap",
+  "balance": 5.6,
+  "yoy_pct": 3.7
+ },
+ {
+  "institution_id": "yuanta",
+  "category": "wrap",
+  "balance": 4.5,
+  "yoy_pct": 2.3
+ },
+ {
+  "institution_id": "hanwha",
+  "category": "wrap",
+  "balance": 4.5,
+  "yoy_pct": 2.3
+ },
+ {
+  "institution_id": "mirae",
+  "category": "els",
+  "balance": 6.1,
+  "yoy_pct": -14.1
+ },
+ {
+  "institution_id": "kis",
+  "category": "els",
+  "balance": 7.2,
+  "yoy_pct": -1.4
+ },
+ {
+  "institution_id": "nh",
+  "category": "els",
+  "balance": 4.2,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "samsung",
+  "category": "els",
+  "balance": 5.6,
+  "yoy_pct": -15.2
+ },
+ {
+  "institution_id": "kb_sec",
+  "category": "els",
+  "balance": 4.1,
+  "yoy_pct": -14.6
+ },
+ {
+  "institution_id": "kiwoom",
+  "category": "els",
+  "balance": 2.9,
+  "yoy_pct": -12.1
+ },
+ {
+  "institution_id": "shinhan_sec",
+  "category": "els",
+  "balance": 5.0,
+  "yoy_pct": -12.3
+ },
+ {
+  "institution_id": "hana_sec",
+  "category": "els",
+  "balance": 2.9,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "meritz",
+  "category": "els",
+  "balance": 2.9,
+  "yoy_pct": -14.7
+ },
+ {
+  "institution_id": "daishin",
+  "category": "els",
+  "balance": 2.8,
+  "yoy_pct": -6.7
+ },
+ {
+  "institution_id": "yuanta",
+  "category": "els",
+  "balance": 1.8,
+  "yoy_pct": -5.3
+ },
+ {
+  "institution_id": "hanwha",
+  "category": "els",
+  "balance": 1.6,
+  "yoy_pct": -5.9
+ },
+ {
+  "institution_id": "kb_bank",
+  "category": "deposit",
+  "balance": 165.1,
+  "yoy_pct": -5.3
+ },
+ {
+  "institution_id": "shinhan_bank",
+  "category": "deposit",
+  "balance": 147.4,
+  "yoy_pct": -0.9
+ },
+ {
+  "institution_id": "hana_bank",
+  "category": "deposit",
+  "balance": 171.4,
+  "yoy_pct": 1.2
+ },
+ {
+  "institution_id": "woori",
+  "category": "deposit",
+  "balance": 158.5,
+  "yoy_pct": -5.2
+ },
+ {
+  "institution_id": "nh_bank",
+  "category": "deposit",
+  "balance": 132.1,
+  "yoy_pct": 3.4
+ },
+ {
+  "institution_id": "ibk",
+  "category": "deposit",
+  "balance": 75.5,
+  "yoy_pct": 13.7
+ },
+ {
+  "institution_id": "sc",
+  "category": "deposit",
+  "balance": 47.9,
+  "yoy_pct": -5.7
+ },
+ {
+  "institution_id": "kakao",
+  "category": "deposit",
+  "balance": 61.4,
+  "yoy_pct": 10.6
+ },
+ {
+  "institution_id": "kbank",
+  "category": "deposit",
+  "balance": 30.6,
+  "yoy_pct": -3.5
+ },
+ {
+  "institution_id": "toss",
+  "category": "deposit",
+  "balance": 18.8,
+  "yoy_pct": 6.2
+ },
+ {
+  "institution_id": "im",
+  "category": "deposit",
+  "balance": 34.0,
+  "yoy_pct": 10.4
+ },
+ {
+  "institution_id": "busan",
+  "category": "deposit",
+  "balance": 38.1,
+  "yoy_pct": 13.1
+ },
+ {
+  "institution_id": "mirae",
+  "category": "isa",
+  "balance": 3.3,
+  "yoy_pct": 10.0
+ },
+ {
+  "institution_id": "kis",
+  "category": "isa",
+  "balance": 3.9,
+  "yoy_pct": 21.9
+ },
+ {
+  "institution_id": "nh",
+  "category": "isa",
+  "balance": 2.7,
+  "yoy_pct": 12.5
+ },
+ {
+  "institution_id": "samsung",
+  "category": "isa",
+  "balance": 3.7,
+  "yoy_pct": 23.3
+ },
+ {
+  "institution_id": "kb_sec",
+  "category": "isa",
+  "balance": 2.2,
+  "yoy_pct": 15.8
+ },
+ {
+  "institution_id": "kiwoom",
+  "category": "isa",
+  "balance": 2.0,
+  "yoy_pct": 17.6
+ },
+ {
+  "institution_id": "shinhan_sec",
+  "category": "isa",
+  "balance": 1.8,
+  "yoy_pct": 28.6
+ },
+ {
+  "institution_id": "hana_sec",
+  "category": "isa",
+  "balance": 2.4,
+  "yoy_pct": 20.0
+ },
+ {
+  "institution_id": "meritz",
+  "category": "isa",
+  "balance": 1.5,
+  "yoy_pct": 25.0
+ },
+ {
+  "institution_id": "daishin",
+  "category": "isa",
+  "balance": 1.5,
+  "yoy_pct": 15.4
+ },
+ {
+  "institution_id": "yuanta",
+  "category": "isa",
+  "balance": 0.9,
+  "yoy_pct": 28.6
+ },
+ {
+  "institution_id": "hanwha",
+  "category": "isa",
+  "balance": 1.1,
+  "yoy_pct": 22.2
+ },
+ {
+  "institution_id": "kb_bank",
+  "category": "isa",
+  "balance": 2.3,
+  "yoy_pct": 15.0
+ },
+ {
+  "institution_id": "shinhan_bank",
+  "category": "isa",
+  "balance": 1.8,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "hana_bank",
+  "category": "isa",
+  "balance": 2.1,
+  "yoy_pct": 16.7
+ },
+ {
+  "institution_id": "woori",
+  "category": "isa",
+  "balance": 1.8,
+  "yoy_pct": 5.9
+ },
+ {
+  "institution_id": "nh_bank",
+  "category": "isa",
+  "balance": 2.0,
+  "yoy_pct": 17.6
+ },
+ {
+  "institution_id": "ibk",
+  "category": "isa",
+  "balance": 1.2,
+  "yoy_pct": 9.1
+ },
+ {
+  "institution_id": "sc",
+  "category": "isa",
+  "balance": 0.5,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "kakao",
+  "category": "isa",
+  "balance": 0.6,
+  "yoy_pct": 20.0
+ },
+ {
+  "institution_id": "kbank",
+  "category": "isa",
+  "balance": 0.4,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "toss",
+  "category": "isa",
+  "balance": 0.3,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "im",
+  "category": "isa",
+  "balance": 0.5,
+  "yoy_pct": 25.0
+ },
+ {
+  "institution_id": "busan",
+  "category": "isa",
+  "balance": 0.6,
+  "yoy_pct": 20.0
+ },
+ {
+  "institution_id": "mirae",
+  "category": "pension",
+  "balance": 20.6,
+  "yoy_pct": 10.8
+ },
+ {
+  "institution_id": "kis",
+  "category": "pension",
+  "balance": 19.6,
+  "yoy_pct": 18.8
+ },
+ {
+  "institution_id": "nh",
+  "category": "pension",
+  "balance": 11.0,
+  "yoy_pct": 25.0
+ },
+ {
+  "institution_id": "samsung",
+  "category": "pension",
+  "balance": 17.8,
+  "yoy_pct": 14.1
+ },
+ {
+  "institution_id": "kb_sec",
+  "category": "pension",
+  "balance": 11.5,
+  "yoy_pct": 23.7
+ },
+ {
+  "institution_id": "kiwoom",
+  "category": "pension",
+  "balance": 10.4,
+  "yoy_pct": 9.5
+ },
+ {
+  "institution_id": "shinhan_sec",
+  "category": "pension",
+  "balance": 10.5,
+  "yoy_pct": 12.9
+ },
+ {
+  "institution_id": "hana_sec",
+  "category": "pension",
+  "balance": 10.8,
+  "yoy_pct": 25.6
+ },
+ {
+  "institution_id": "meritz",
+  "category": "pension",
+  "balance": 8.8,
+  "yoy_pct": 11.4
+ },
+ {
+  "institution_id": "daishin",
+  "category": "pension",
+  "balance": 5.3,
+  "yoy_pct": 12.8
+ },
+ {
+  "institution_id": "yuanta",
+  "category": "pension",
+  "balance": 4.4,
+  "yoy_pct": 4.8
+ },
+ {
+  "institution_id": "hanwha",
+  "category": "pension",
+  "balance": 3.2,
+  "yoy_pct": 28.0
+ },
+ {
+  "institution_id": "kb_bank",
+  "category": "pension",
+  "balance": 42.7,
+  "yoy_pct": 1.7
+ },
+ {
+  "institution_id": "shinhan_bank",
+  "category": "pension",
+  "balance": 42.5,
+  "yoy_pct": 12.1
+ },
+ {
+  "institution_id": "hana_bank",
+  "category": "pension",
+  "balance": 28.1,
+  "yoy_pct": 9.8
+ },
+ {
+  "institution_id": "woori",
+  "category": "pension",
+  "balance": 26.9,
+  "yoy_pct": 13.0
+ },
+ {
+  "institution_id": "nh_bank",
+  "category": "pension",
+  "balance": 23.8,
+  "yoy_pct": 15.5
+ },
+ {
+  "institution_id": "ibk",
+  "category": "pension",
+  "balance": 21.4,
+  "yoy_pct": 16.3
+ },
+ {
+  "institution_id": "sc",
+  "category": "pension",
+  "balance": 8.0,
+  "yoy_pct": 17.6
+ },
+ {
+  "institution_id": "kakao",
+  "category": "pension",
+  "balance": 13.5,
+  "yoy_pct": 17.4
+ },
+ {
+  "institution_id": "kbank",
+  "category": "pension",
+  "balance": 5.6,
+  "yoy_pct": 0.0
+ },
+ {
+  "institution_id": "toss",
+  "category": "pension",
+  "balance": 5.5,
+  "yoy_pct": 7.8
+ },
+ {
+  "institution_id": "im",
+  "category": "pension",
+  "balance": 7.8,
+  "yoy_pct": -2.5
+ },
+ {
+  "institution_id": "busan",
+  "category": "pension",
+  "balance": 11.2,
+  "yoy_pct": -0.9
+ }
+]

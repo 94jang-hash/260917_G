@@ -3,258 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskMaster Pro - 스마트 할 일 관리</title>
-    <meta name="description" content="Flask 기반의 직관적이고 강력한 프리미엄 할 일 관리 웹 애플리케이션">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <title>금융상품 동향 KR</title>
+    <meta name="description" content="한국 증권사·은행의 펀드/신탁/랩 등 금융상품 잔고 추이, 기관별 현황, 상품 라인업, 주요 이슈를 한눈에 보는 대시보드">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <div class="app-wrapper">
-        <!-- 배경 글래스 블러 효과용 구체들 -->
-        <div class="bg-glow glow-1"></div>
-        <div class="bg-glow glow-2"></div>
-        <div class="bg-glow glow-3"></div>
-
-        <div class="main-container">
-            <!-- 헤더 영역 -->
-            <header class="app-header">
-                <div class="header-content">
-                    <div class="brand-badge">
-                        <i class="fa-solid fa-layer-group"></i>
-                        <span>Smart Workspace</span>
-                    </div>
-                    <h1 class="app-title">TaskMaster <span class="gradient-text">Pro</span></h1>
-                    <p class="header-subtitle" id="current-date-text">오늘의 계획을 스마트하게 정리하고 완료해보세요.</p>
+<body data-as-of="{{ meta.as_of }}">
+    <div class="page">
+        <!-- 헤더 -->
+        <header class="topbar">
+            <div class="brand">
+                <span class="brand-mark"><i class="fa-solid fa-chart-line"></i></span>
+                <div>
+                    <h1 class="brand-title">금융상품 동향 <span class="brand-kr">KR</span></h1>
+                    <p class="brand-sub">증권사·은행 펀드 / 신탁 / 랩 · ELS · 예적금 · ISA · 퇴직연금</p>
                 </div>
-            </header>
-
-            <!-- 통계 & 진행률 대시보드 카드 -->
-            <section class="stats-card glass-panel" id="stats-section">
-                <div class="stats-header">
-                    <div class="stats-title-group">
-                        <span class="stats-label">오늘의 달성률</span>
-                        <div class="stats-percentage" id="stat-percentage">0%</div>
-                    </div>
-                    <div class="stats-counts">
-                        <div class="count-badge total-badge">
-                            <i class="fa-solid fa-list-check"></i>
-                            <span>전체 <strong id="stat-total">0</strong></span>
-                        </div>
-                        <div class="count-badge active-badge">
-                            <i class="fa-solid fa-clock"></i>
-                            <span>진행 중 <strong id="stat-active">0</strong></span>
-                        </div>
-                        <div class="count-badge completed-badge">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>완료 <strong id="stat-completed">0</strong></span>
-                        </div>
-                    </div>
-                </div>
-                <!-- 프로그레스 바 -->
-                <div class="progress-bar-track">
-                    <div class="progress-bar-fill" id="progress-bar" style="width: 0%;"></div>
-                </div>
-            </section>
-
-            <!-- 할일 추가 카드 -->
-            <section class="add-todo-section glass-panel">
-                <form id="todo-form" class="todo-form">
-                    <div class="input-main-row">
-                        <div class="input-icon-wrapper">
-                            <i class="fa-solid fa-plus input-icon"></i>
-                            <input 
-                                type="text" 
-                                id="todo-title" 
-                                class="main-input" 
-                                placeholder="새로운 할 일을 입력하고 Enter를 누르세요..." 
-                                autocomplete="off" 
-                                required
-                            >
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="btn-add-todo">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>추가하기</span>
-                        </button>
-                    </div>
-
-                    <!-- 세부 설정 옵션들 -->
-                    <div class="input-details-row">
-                        <div class="option-group">
-                            <label for="todo-priority" class="option-label">
-                                <i class="fa-solid fa-flag"></i> 우선순위
-                            </label>
-                            <select id="todo-priority" class="select-input">
-                                <option value="normal" selected>보통 (Normal)</option>
-                                <option value="high">높음 (High) 🔥</option>
-                                <option value="low">낮음 (Low)</option>
-                            </select>
-                        </div>
-
-                        <div class="option-group">
-                            <label for="todo-category" class="option-label">
-                                <i class="fa-solid fa-tag"></i> 카테고리
-                            </label>
-                            <input 
-                                type="text" 
-                                id="todo-category" 
-                                class="text-input" 
-                                list="category-datalist" 
-                                placeholder="예: 업무, 공부, 개인" 
-                                value="업무"
-                            >
-                            <datalist id="category-datalist">
-                                <option value="업무">
-                                <option value="개인">
-                                <option value="공부">
-                                <option value="프로젝트">
-                                <option value="건강">
-                            </datalist>
-                        </div>
-
-                        <div class="option-group">
-                            <label for="todo-due-date" class="option-label">
-                                <i class="fa-regular fa-calendar-days"></i> 마감기한
-                            </label>
-                            <input type="date" id="todo-due-date" class="date-input">
-                        </div>
-
-                        <div class="quick-dates">
-                            <button type="button" class="btn-chip" id="btn-due-today">오늘</button>
-                            <button type="button" class="btn-chip" id="btn-due-tomorrow">내일</button>
-                        </div>
-                    </div>
-
-                    <!-- 추가 메모 (접이식) -->
-                    <div class="memo-wrapper">
-                        <input 
-                            type="text" 
-                            id="todo-desc" 
-                            class="memo-input" 
-                            placeholder="상세 설명이나 메모를 남겨보세요 (선택사항)"
-                        >
-                    </div>
-                </form>
-            </section>
-
-            <!-- 필터 및 검색 컨트롤 -->
-            <section class="controls-section glass-panel">
-                <div class="filter-tabs" id="filter-tabs">
-                    <button class="tab-btn active" data-filter="all" id="filter-tab-all">
-                        <i class="fa-solid fa-layer-group"></i> 전체보기
-                    </button>
-                    <button class="tab-btn" data-filter="active" id="filter-tab-active">
-                        <i class="fa-regular fa-circle"></i> 진행 중
-                    </button>
-                    <button class="tab-btn" data-filter="completed" id="filter-tab-completed">
-                        <i class="fa-solid fa-check-double"></i> 완료됨
-                    </button>
-                </div>
-
-                <div class="search-and-actions">
-                    <div class="search-box">
-                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input 
-                            type="text" 
-                            id="search-input" 
-                            class="search-input" 
-                            placeholder="할 일 검색..."
-                        >
-                        <button class="btn-clear-search hidden" id="btn-clear-search">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-
-                    <div class="category-dropdown-group">
-                        <select id="category-filter" class="select-input category-select">
-                            <option value="all">모든 카테고리</option>
-                        </select>
-                    </div>
-
-                    <button class="btn-text-danger" id="btn-clear-completed" title="완료된 항목 전체 삭제">
-                        <i class="fa-regular fa-trash-can"></i>
-                        <span>완료 정리</span>
-                    </button>
-                </div>
-            </section>
-
-            <!-- 할일 목록 렌더링 영역 -->
-            <section class="todo-list-section">
-                <div id="todo-list" class="todo-items-grid">
-                    <!-- JavaScript로 동적 렌더링 -->
-                </div>
-
-                <!-- 빈 상태 표시 (Empty State) -->
-                <div id="empty-state" class="empty-state glass-panel hidden">
-                    <div class="empty-icon-wrap">
-                        <i class="fa-solid fa-clipboard-check"></i>
-                    </div>
-                    <h3 class="empty-title">등록된 할 일이 없습니다</h3>
-                    <p class="empty-desc">새로운 작업을 추가하거나 다른 필터를 선택해보세요.</p>
-                </div>
-            </section>
-
-            <!-- 푸터 -->
-            <footer class="app-footer">
-                <p>TaskMaster Pro &bull; Powered by Python Flask &bull; Modern SQLite Stack</p>
-            </footer>
-        </div>
-    </div>
-
-    <!-- 수정 모달 -->
-    <div class="modal-overlay hidden" id="edit-modal">
-        <div class="modal-card glass-panel">
-            <div class="modal-header">
-                <h3><i class="fa-solid fa-pen-to-square"></i> 할 일 수정</h3>
-                <button class="btn-close-modal" id="btn-close-modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
             </div>
-            <form id="edit-form" class="modal-form">
-                <input type="hidden" id="edit-todo-id">
-                <div class="form-group">
-                    <label for="edit-title">제목</label>
-                    <input type="text" id="edit-title" class="main-input" required>
+            <div class="topbar-meta">
+                <span class="pill pill-muted"><i class="fa-regular fa-calendar"></i> 기준월 <strong id="as-of">{{ meta.as_of }}</strong></span>
+                {% if meta.is_sample %}
+                <span class="pill pill-warn" title="{{ meta.disclaimer }}"><i class="fa-solid fa-flask"></i> 예시 데이터</span>
+                {% endif %}
+            </div>
+        </header>
+
+        <!-- 필터 행: 모든 차트 위에 한 줄 -->
+        <section class="filters" aria-label="필터">
+            <div class="filter-group">
+                <span class="filter-label">기관 유형</span>
+                <div class="segmented" id="inst-type-seg" role="tablist">
+                    <button class="seg-btn active" data-value="all" role="tab">전체</button>
+                    <button class="seg-btn" data-value="securities" role="tab">증권사</button>
+                    <button class="seg-btn" data-value="bank" role="tab">은행</button>
                 </div>
-                <div class="form-group">
-                    <label for="edit-desc">메모</label>
-                    <textarea id="edit-desc" class="textarea-input" rows="3"></textarea>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">기간</span>
+                <div class="segmented" id="range-seg" role="tablist">
+                    <button class="seg-btn" data-value="6" role="tab">6개월</button>
+                    <button class="seg-btn active" data-value="12" role="tab">12개월</button>
+                    <button class="seg-btn" data-value="24" role="tab">24개월</button>
                 </div>
-                <div class="form-row-2">
-                    <div class="form-group">
-                        <label for="edit-priority">우선순위</label>
-                        <select id="edit-priority" class="select-input">
-                            <option value="high">높음 🔥</option>
-                            <option value="normal">보통</option>
-                            <option value="low">낮음</option>
-                        </select>
+            </div>
+            <div class="filter-group filter-group-grow">
+                <span class="filter-label">상품 유형</span>
+                <div class="chips" id="category-chips" aria-label="상품 유형 선택"></div>
+            </div>
+        </section>
+
+        <!-- KPI 타일 -->
+        <section class="kpi-grid" id="kpi-grid" aria-label="상품 유형별 잔고 요약"></section>
+
+        <!-- 차트 행 -->
+        <section class="chart-row">
+            <article class="card card-wide">
+                <div class="card-head">
+                    <div>
+                        <h2 class="card-title">잔고 추이</h2>
+                        <p class="card-sub" id="trend-sub">선택한 상품 유형의 월별 잔고 · 시작월 = 100 지수</p>
                     </div>
-                    <div class="form-group">
-                        <label for="edit-category">카테고리</label>
-                        <input type="text" id="edit-category" class="text-input">
+                    <div class="card-tools">
+                        <div class="segmented segmented-sm" id="trend-mode-seg">
+                            <button class="seg-btn active" data-value="indexed">지수</button>
+                            <button class="seg-btn" data-value="values">금액</button>
+                        </div>
+                        <button class="btn-ghost" id="trend-table-toggle" aria-pressed="false"><i class="fa-solid fa-table"></i> 표</button>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="edit-due-date">마감기한</label>
-                    <input type="date" id="edit-due-date" class="date-input">
+                <div class="chart-box"><canvas id="trend-chart" role="img" aria-label="상품 유형별 월별 잔고 추이 선 그래프"></canvas></div>
+                <div class="table-wrap hidden" id="trend-table"></div>
+            </article>
+
+            <article class="card">
+                <div class="card-head">
+                    <div>
+                        <h2 class="card-title">증권사 vs 은행 구성</h2>
+                        <p class="card-sub">기준월 잔고, 조원</p>
+                    </div>
                 </div>
-                <div class="modal-actions">
-                    <button type="button" class="btn btn-secondary" id="btn-cancel-edit">취소</button>
-                    <button type="submit" class="btn btn-primary" id="btn-save-edit">저장하기</button>
+                <div class="chart-box"><canvas id="split-chart" role="img" aria-label="상품 유형별 증권사와 은행 잔고 구성 막대 그래프"></canvas></div>
+            </article>
+        </section>
+
+        <section class="chart-row">
+            <article class="card">
+                <div class="card-head">
+                    <div>
+                        <h2 class="card-title">기관별 순위 <span class="card-title-tag" id="rank-cat-name"></span></h2>
+                        <p class="card-sub">기준월 잔고 상위 10개 기관, 조원</p>
+                    </div>
+                    <div class="card-tools">
+                        <select id="rank-category" class="select" aria-label="순위 기준 상품 유형"></select>
+                    </div>
                 </div>
-            </form>
+                <div class="chart-box chart-box-tall"><canvas id="rank-chart" role="img" aria-label="기관별 잔고 순위 가로 막대 그래프"></canvas></div>
+            </article>
+
+            <article class="card card-wide">
+                <div class="card-head">
+                    <div>
+                        <h2 class="card-title">주요 동향 이슈</h2>
+                        <p class="card-sub">정책·시장 이벤트 타임라인 (공개 보도 요약)</p>
+                    </div>
+                    <div class="card-tools">
+                        <select id="issue-category" class="select" aria-label="이슈 상품 유형"></select>
+                    </div>
+                </div>
+                <ol class="timeline" id="issue-list"></ol>
+            </article>
+        </section>
+
+        <!-- 상품 목록 -->
+        <section class="card">
+            <div class="card-head">
+                <div>
+                    <h2 class="card-title">상품 라인업 <span class="card-title-tag" id="product-count"></span></h2>
+                    <p class="card-sub">기관·유형별 상품 예시. 행을 누르면 상세를 볼 수 있습니다.</p>
+                </div>
+                <div class="card-tools card-tools-wrap">
+                    <select id="product-category" class="select" aria-label="상품 유형"></select>
+                    <select id="product-institution" class="select" aria-label="기관"></select>
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="product-search" placeholder="상품명·기관 검색" aria-label="상품 검색">
+                    </div>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table" id="product-table">
+                    <thead>
+                        <tr>
+                            <th data-sort="name">상품명</th>
+                            <th>기관</th>
+                            <th>유형</th>
+                            <th class="num" data-sort="balance">잔고 (억원)</th>
+                            <th class="num" data-sort="return_1y">1년 수익률</th>
+                            <th class="num" data-sort="risk_grade">위험등급</th>
+                            <th data-sort="launch_date">출시일</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p class="empty hidden" id="product-empty">조건에 맞는 상품이 없습니다.</p>
+                <button class="btn-ghost btn-more hidden" id="product-more">더 보기</button>
+            </div>
+        </section>
+
+        <footer class="foot">
+            <p>{{ meta.disclaimer }}</p>
+            <p>실데이터 교체: <code>data/*.json</code> · 출처 후보: 금융투자협회 통계, 금융감독원 금융상품통합비교공시, 각사 공시</p>
+        </footer>
+    </div>
+
+    <!-- 상품 상세 모달 -->
+    <div class="modal-overlay hidden" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <div class="modal-head">
+                <h3 id="modal-title">상품 상세</h3>
+                <button class="btn-icon" id="modal-close" aria-label="닫기"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <dl class="detail-grid" id="modal-body"></dl>
         </div>
     </div>
 
-    <!-- 토스트 알림 컨테이너 -->
-    <div id="toast-container" class="toast-container"></div>
-
-    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>

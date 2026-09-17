@@ -1,0 +1,122 @@
+[
+ {
+  "id": "mirae",
+  "name": "미래에셋증권",
+  "type": "securities"
+ },
+ {
+  "id": "kis",
+  "name": "한국투자증권",
+  "type": "securities"
+ },
+ {
+  "id": "nh",
+  "name": "NH투자증권",
+  "type": "securities"
+ },
+ {
+  "id": "samsung",
+  "name": "삼성증권",
+  "type": "securities"
+ },
+ {
+  "id": "kb_sec",
+  "name": "KB증권",
+  "type": "securities"
+ },
+ {
+  "id": "kiwoom",
+  "name": "키움증권",
+  "type": "securities"
+ },
+ {
+  "id": "shinhan_sec",
+  "name": "신한투자증권",
+  "type": "securities"
+ },
+ {
+  "id": "hana_sec",
+  "name": "하나증권",
+  "type": "securities"
+ },
+ {
+  "id": "meritz",
+  "name": "메리츠증권",
+  "type": "securities"
+ },
+ {
+  "id": "daishin",
+  "name": "대신증권",
+  "type": "securities"
+ },
+ {
+  "id": "yuanta",
+  "name": "유안타증권",
+  "type": "securities"
+ },
+ {
+  "id": "hanwha",
+  "name": "한화투자증권",
+  "type": "securities"
+ },
+ {
+  "id": "kb_bank",
+  "name": "KB국민은행",
+  "type": "bank"
+ },
+ {
+  "id": "shinhan_bank",
+  "name": "신한은행",
+  "type": "bank"
+ },
+ {
+  "id": "hana_bank",
+  "name": "하나은행",
+  "type": "bank"
+ },
+ {
+  "id": "woori",
+  "name": "우리은행",
+  "type": "bank"
+ },
+ {
+  "id": "nh_bank",
+  "name": "NH농협은행",
+  "type": "bank"
+ },
+ {
+  "id": "ibk",
+  "name": "IBK기업은행",
+  "type": "bank"
+ },
+ {
+  "id": "sc",
+  "name": "SC제일은행",
+  "type": "bank"
+ },
+ {
+  "id": "kakao",
+  "name": "카카오뱅크",
+  "type": "bank"
+ },
+ {
+  "id": "kbank",
+  "name": "케이뱅크",
+  "type": "bank"
+ },
+ {
+  "id": "toss",
+  "name": "토스뱅크",
+  "type": "bank"
+ },
+ {
+  "id": "im",
+  "name": "iM뱅크",
+  "type": "bank"
+ },
+ {
+  "id": "busan",
+  "name": "BNK부산은행",
+  "type": "bank"
+ }
+]
