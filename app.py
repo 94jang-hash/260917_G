@@ -4,7 +4,11 @@ from datetime import datetime
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
-DB_PATH = os.path.join(os.path.dirname(__file__), 'todos.db')
+# Vercel 같은 서버리스 환경은 프로젝트 폴더가 읽기 전용이므로 /tmp에 DB를 둔다 (인스턴스 재시작 시 초기화됨)
+if os.environ.get('VERCEL'):
+    DB_PATH = os.path.join('/tmp', 'todos.db')
+else:
+    DB_PATH = os.path.join(os.path.dirname(__file__), 'todos.db')
 
 def get_db():
     conn = sqlite3.connect(DB_PATH)
@@ -180,7 +184,9 @@ def get_stats():
         'categories': categories
     })
 
+# 서버리스 환경에서도 첫 import 시 테이블이 준비되도록 모듈 로드 시점에 초기화
+init_db()
+
 if __name__ == '__main__':
-    init_db()
     print("Todo Flask Application running at http://127.0.0.1:5000")
     app.run(host='127.0.0.1', port=5000, debug=True)
